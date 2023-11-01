@@ -24,13 +24,13 @@ const Home: React.FC = () => {
             TestDriveLive
           </span>{" "}
           provides social proof to potential customers that marketing materials
-          like a website or advertisements can’t provide. The reactions are
-          authentic and show someone’s actual experience with the product. While
+          like a website or advertisements can't provide. The reactions are
+          authentic and show someone's actual experience with the product. While
           those marketing materials are important, social proof is convincing and
-          communicates a customer’s experience with the item.
+          communicates a customer's experience with the item.
         </span>
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
-          <h1 className="text-red-400 hover:text-red-600">Tell your product's story</h1> Unleash your brand’s potential with Orlando’s
+          <h1 className="text-red-400 hover:text-red-600">Tell your product's story</h1> Unleash your brand's potential with Orlando's
           finest product review studio. Distinctively crafted by industry experts
           and influencers, our videos ensure your brand eclipses competitors.
           Experience the magic of professional touch and unparalleled quality, all
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         </span>
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
           <h1 className="text-red-400 hover:text-red-600">What are you waiting for?</h1>Dive into a realm where superior quality meets
-          strategic presentation, and watch your conversions soar. Don’t let your
+          strategic presentation, and watch your conversions soar. Don't let your
           brand be just another name in the crowd—let us elevate you to where you
           truly belong.
         </span>
