@@ -47,26 +47,31 @@ const Home: React.FC = () => {
           truly belong.
         </span>
       </div>
-      <div className="flex items-center mt-8">
-        <input
-            type="text"
-            placeholder="Code"
-            className="bg-gray-700 text-white rounded p-2 mr-4"
-        />
-        <Link href="/contract">
-            <button className="px-4 py-2 text-lg font-mono font-bold text-red-500 bg-gray-800 rounded hover:bg-gray-700">
-            Enter
-            </button>
-        </Link>
+
+        <div className="non-flex items-center mt-8">
+            <span className="text-gray-300 mr-4">To submit your product for review to be part of Test Drive Live, click here to go to the submission page</span>
         </div>
-        <div className="flex items-center mt-8">
-        <span className="text-gray-300 mr-4">Don&apos;t have a code?</span>
         <Link href="/request-code">
             <button className="px-4 py-2 text-lg font-mono font-bold text-red-500 bg-gray-800 rounded hover:bg-gray-700">
-            Request a Code
+            Submit
             </button>
         </Link>
+        <br></br>
+        <span className="text-gray-200">If you have a client code, type it here:</span>
+        <div className="flex items-center mt-8">
+            <input
+                type="text"
+                placeholder="Code"
+                className="bg-gray-700 text-white rounded p-2 mr-4"
+            />
+            <Link href="/contract">
+                <button className="px-4 py-2 text-lg font-mono font-bold text-red-500 bg-gray-800 rounded hover:bg-gray-700">
+                Enter
+                </button>
+            </Link>
         </div>
+
+        
 
     </div>
     

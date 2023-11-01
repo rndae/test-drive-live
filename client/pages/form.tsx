@@ -49,8 +49,8 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-4xl rounded-lg shadow-lg bg-gray-800 p-8"
       >
-        
-        <div className="flex">
+
+        <div className="border-2 border-gray-700 rounded-lg m-4 flex">
           <div className="w-1/2 p-4">
             <h3 className="text-lg font-bold text-white">Primary Contact</h3>
             <label htmlFor="primaryName" className="text-gray-300">

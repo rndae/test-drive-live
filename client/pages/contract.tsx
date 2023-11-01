@@ -11,6 +11,13 @@ import { pdfjs } from 'react-pdf';
 import Image from "next/image";
 
 type ContactFormProps = {
+    signature: string;
+    fullName: string;
+    title: string;
+    date: string;
+    company: string;
+    name: string;
+    address: string;
     primaryName: string;
     primaryEmail: string;
     primaryPhone: string;
@@ -21,8 +28,32 @@ type ContactFormProps = {
 
 const resolver: Resolver<ContactFormProps> = async (values) => {
     return {
-      values: values.primaryName && values.secondaryName ? values : {},
+      values: values.signature && values.fullName && values.date && values.primaryName && values.secondaryName && values.company && values.name && values.address  ? values : {},
       errors: {
+        ...(values.signature
+            ? {}
+            : {
+                signature: {
+                  type: "required",
+                  message: "Signature is required.",
+                },
+              }),
+          ...(values.fullName
+            ? {}
+            : {
+                fullName: {
+                  type: "required",
+                  message: "Full legal name is required.",
+                },
+              }),
+          ...(values.date
+            ? {}
+            : {
+                date: {
+                  type: "required",
+                  message: "Date is required.",
+                },
+              }),
         ...(values.primaryName
           ? {}
           : {
@@ -39,6 +70,30 @@ const resolver: Resolver<ContactFormProps> = async (values) => {
                 message: "Secondary name is required.",
               },
             }),
+        ...(values.company
+            ? {}
+            : {
+                company: {
+                    type: "required",
+                    message: "Company is required.",
+                },
+                }),
+            ...(values.name
+            ? {}
+            : {
+                name: {
+                    type: "required",
+                    message: "Name is required.",
+                },
+                }),
+            ...(values.address
+            ? {}
+            : {
+                address: {
+                    type: "required",
+                    message: "Address is required.",
+                },
+                }),
       },
     };
   };
@@ -73,7 +128,129 @@ const Home: React.FC = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-4xl rounded-lg shadow-lg bg-gray-800 p-8"
       >
-        <span className="text-gray-300"> In addition, please provide the primary and secondary contact form your organization for all onboarding and production matters.</span>
+        <span className="text-gray-300">Sign instructions or some oher text here or no</span>
+
+        <div className="flex">
+          <div className="w-1/2 p-4">
+            <label htmlFor="signature" className="text-gray-300 mt-2">
+              Signature
+            </label>
+            <input
+              id="signature"
+              name="signature"
+              type="text"
+              {...register("signature")}
+              className="bg-gray-700 text-white rounded p-2 w-full"
+            />
+            {errors?.signature && (
+              <span className="text-red-500">{errors.signature.message}</span>
+            )}
+          </div>
+          <div className="w-1/2 p-4">
+            <label htmlFor="fullName" className="text-gray-300 mt-2">
+              Full Legal Name
+            </label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              {...register("fullName")}
+              className="bg-gray-700 text-white rounded p-2 w-full"
+            />
+            {errors?.fullName && (
+              <span className="text-red-500">{errors.fullName.message}</span>
+            )}
+          </div>
+        </div>
+        <div className="flex">
+          <div className="w-1/2 p-4">
+            <label htmlFor="title" className="text-gray-300 mt-2">
+              Title
+            </label>
+            <select
+              id="title"
+              name="title"
+              {...register("title")}
+              className="bg-gray-700 text-white rounded p-2 w-full"
+            >
+              <option value="">Select a title</option>
+              <option value="Mr.">Mr.</option>
+              <option value="Mrs.">Mrs.</option>
+              <option value="Ms.">Ms.</option>
+              <option value="Dr.">Dr.</option>
+              <option value="Prof.">Prof.</option>
+            </select>
+          </div>
+          <div className="w-1/2 p-4">
+            <label htmlFor="date" className="text-gray-300 mt-2">
+              Date
+            </label>
+            <input
+              id="date"
+              name="date"
+              type="date"
+              {...register("date")}
+              className="bg-gray-700 text-white rounded p-2 w-full"
+            />
+            {errors?.date && (
+              <span className="text-red-500">{errors.date.message}</span>
+            )}
+          </div>
+        </div>
+        <div className="">
+            <span className="text-gray-300 overflow-hidden whitespace-nowrap w-full text-ellipsis">Your company information:</span>
+            <div className="flex">
+            <div className="w-1/2 p-4">
+                <label htmlFor="company" className="text-gray-300 mt-2">
+                Company Name
+                </label>
+                <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    {...register("company")}
+                    className="bg-gray-700 text-white rounded p-2 w-full"
+                    />
+                    {errors?.company && (
+                    <span className="text-red-500">{errors.company.message}</span>
+                    )}
+            </div>
+            <div className="w-1/2 p-4">
+                <label htmlFor="name" className="text-gray-300 mt-2">
+                Name
+                </label>
+                <input
+                id="name"
+                name="name"
+                type="text"
+                {...register("name")}
+                className="bg-gray-700 text-white rounded p-2 w-full"
+                />
+                {errors?.name && (
+                <span className="text-red-500">{errors.name.message}</span>
+                )}
+            </div>
+            </div>
+            <div className="flex">
+            <div className="w-full p-4">
+                <label htmlFor="address" className="text-gray-300 mt-2">
+                Address
+                </label>
+                <input
+                id="address"
+                name="address"
+                type="text"
+                {...register("address")}
+                className="bg-gray-700 text-white rounded p-2 w-full"
+                />
+                {errors?.address && (
+                <span className="text-red-500">{errors.address.message}</span>
+                )}
+            </div>
+            </div>
+        </div>
+        <span className="text-gray-300"> In addition, please provide the primary and secondary contact form your organization for all onboarding and production matters:</span>
+
         <div className="flex">
           <div className="w-1/2 p-4">
             <h3 className="text-lg font-bold text-white">Primary Contact</h3>
