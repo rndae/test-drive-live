@@ -121,7 +121,7 @@ const Home: React.FC = () => {
             fileUrl="/docs/contract.pdf"
             plugins={[defaultLayoutPluginInstance]}
         />
-      </Worker>
+         </Worker>
       </div>
  
       <form
@@ -137,7 +137,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="signature"
-              name="signature"
+              
               type="text"
               {...register("signature")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="fullName"
-              name="fullName"
+              
               type="text"
               {...register("fullName")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -169,7 +169,7 @@ const Home: React.FC = () => {
             </label>
             <select
               id="title"
-              name="title"
+              
               {...register("title")}
               className="bg-gray-700 text-white rounded p-2 w-full"
             >
@@ -187,7 +187,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="date"
-              name="date"
+              
               type="date"
               {...register("date")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -206,7 +206,7 @@ const Home: React.FC = () => {
                 </label>
                 <input
                     id="company"
-                    name="company"
+                   
                     type="text"
                     {...register("company")}
                     className="bg-gray-700 text-white rounded p-2 w-full"
@@ -221,7 +221,7 @@ const Home: React.FC = () => {
                 </label>
                 <input
                 id="name"
-                name="name"
+                
                 type="text"
                 {...register("name")}
                 className="bg-gray-700 text-white rounded p-2 w-full"
@@ -238,7 +238,7 @@ const Home: React.FC = () => {
                 </label>
                 <input
                 id="address"
-                name="address"
+                
                 type="text"
                 {...register("address")}
                 className="bg-gray-700 text-white rounded p-2 w-full"
@@ -259,7 +259,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="primaryName"
-              name="primaryName"
+              
               type="text"
               {...register("primaryName")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -272,7 +272,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="primaryEmail"
-              name="primaryEmail"
+              
               type="email"
               {...register("primaryEmail")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -285,7 +285,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="primaryPhone"
-              name="primaryPhone"
+              
               type="tel"
               {...register("primaryPhone")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -301,7 +301,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="secondaryName"
-              name="secondaryName"
+              
               type="text"
               {...register("secondaryName")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -316,7 +316,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="secondaryEmail"
-              name="secondaryEmail"
+             
               type="email"
               {...register("secondaryEmail")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -329,7 +329,7 @@ const Home: React.FC = () => {
             </label>
             <input
               id="secondaryPhone"
-              name="secondaryPhone"
+             
               type="tel"
               {...register("secondaryPhone")}
               className="bg-gray-700 text-white rounded p-2 w-full"

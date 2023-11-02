@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-95% from-gray-900 to-pink-900">
       <Image src="/logo/_TD_LOGO_FOR_WEB.png" alt="Logo" width={200} height={200} />
       <div className="flex flex-wrap justify-around w-full max-w-4xl">
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
-          <h1 className="text-red-400 hover:text-red-600">What is TestDriveLive?{" "}</h1>
-          <span className="text-gray-400 hover:text-gray-600">
+          <h1 className="text-gray-100 font-bold hover:text-fuchsia-200">What is TestDriveLive?{" "}</h1>
+          <span className="text-pink-300 hover:text-pink-600">
             TestDriveLive
           </span>{" "}
           is our 24/7 Livestream Shopping Channel or (LSS), also known as live
@@ -19,8 +19,8 @@ const Home: React.FC = () => {
           streaming live.
         </span>
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
-          <h1 className="text-red-400 hover:text-red-600">Expand Your Selling Reach{" "}</h1>
-          <span className="text-gray-400 hover:text-gray-600">
+          <h1 className="text-gray-100 font-bold hover:text-fuchsia-200">Expand Your Selling Reach{" "}</h1>
+          <span className="text-pink-300 hover:text-pink-600">
             TestDriveLive
           </span>{" "}
           provides social proof to potential customers that marketing materials
@@ -30,7 +30,8 @@ const Home: React.FC = () => {
           communicates a customer&apos;s experience with the item.
         </span>
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
-          <h1 className="text-red-400 hover:text-red-600">Tell your product&apos;s story</h1> Unleash your brand&apos;s potential with Orlando&apos;s
+          <h1 className="text-gray-100 font-bold hover:text-fuchsia-200">Tell your product&apos;s story</h1>
+          Unleash your brand&apos;s potential with Orlando&apos;s
           finest product review studio. Distinctively crafted by industry experts
           and influencers, our videos ensure your brand eclipses competitors.
           Experience the magic of professional touch and unparalleled quality, all
@@ -41,7 +42,7 @@ const Home: React.FC = () => {
           guaranteeing a lasting impression on your audience.
         </span>
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
-          <h1 className="text-red-400 hover:text-red-600">What are you waiting for?</h1>Dive into a realm where superior quality meets
+          <h1 className="text-gray-100 font-bold hover:text-fuchsia-200">What are you waiting for?</h1>Dive into a realm where superior quality meets
           strategic presentation, and watch your conversions soar. Don&apos;t let your
           brand be just another name in the crowd—let us elevate you to where you
           truly belong.
@@ -52,7 +53,7 @@ const Home: React.FC = () => {
             <span className="text-gray-300 mr-4">To submit your product for review to be part of Test Drive Live, click here to go to the submission page</span>
         </div>
         <Link href="/request-code">
-            <button className="px-4 py-2 text-lg font-mono font-bold text-red-500 bg-gray-800 rounded hover:bg-gray-700">
+            <button className="px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-800 rounded hover:bg-gray-700">
             Submit
             </button>
         </Link>
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
                 className="bg-gray-700 text-white rounded p-2 mr-4"
             />
             <Link href="/contract">
-                <button className="px-4 py-2 text-lg font-mono font-bold text-red-500 bg-gray-800 rounded hover:bg-gray-700">
+                <button className="px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-800 rounded hover:bg-gray-700">
                 Enter
                 </button>
             </Link>

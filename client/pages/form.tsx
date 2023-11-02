@@ -58,7 +58,7 @@ export default function ContactForm() {
             </label>
             <input
               id="primaryName"
-              name="primaryName"
+              
               type="text"
               {...register("primaryName")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -71,7 +71,7 @@ export default function ContactForm() {
             </label>
             <input
               id="primaryEmail"
-              name="primaryEmail"
+              
               type="email"
               {...register("primaryEmail")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -84,7 +84,7 @@ export default function ContactForm() {
             </label>
             <input
               id="primaryPhone"
-              name="primaryPhone"
+              
               type="tel"
               {...register("primaryPhone")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -100,7 +100,7 @@ export default function ContactForm() {
             </label>
             <input
               id="secondaryName"
-              name="secondaryName"
+              
               type="text"
               {...register("secondaryName")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -115,7 +115,7 @@ export default function ContactForm() {
             </label>
             <input
               id="secondaryEmail"
-              name="secondaryEmail"
+              
               type="email"
               {...register("secondaryEmail")}
               className="bg-gray-700 text-white rounded p-2 w-full"
@@ -128,7 +128,7 @@ export default function ContactForm() {
             </label>
             <input
               id="secondaryPhone"
-              name="secondaryPhone"
+              
               type="tel"
               {...register("secondaryPhone")}
               className="bg-gray-700 text-white rounded p-2 w-full"
