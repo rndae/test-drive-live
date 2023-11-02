@@ -8,7 +8,7 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { useForm, SubmitHandler, Resolver } from "react-hook-form";
 
 import { pdfjs } from 'react-pdf';
-import Image from "next/image";
+
 
 type ContactFormProps = {
     signature: string;
@@ -110,17 +110,18 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
-              <Image src="/logo/_TD_LOGO_FOR_WEB.png" alt="Logo" width={200} height={200} />
-      <span className="text-gray-200">
-        Production and Distribution Agreement
+      <span className="text-gray-300 font-bold">
+        Only people with a code can see this page
       </span>
       <div className="w-full max-w-4xl mt-8 p-4 bg-gray-800 rounded shadow-lg">
 
         <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
-        <Viewer
-            fileUrl="/docs/contract.pdf"
-            plugins={[defaultLayoutPluginInstance]}
-        />
+        <div style={{ height: '500px', overflow: 'auto' }}>
+            <Viewer
+                    fileUrl="/docs/contract.pdf"
+                    plugins={[defaultLayoutPluginInstance]}
+                />
+        </div>
          </Worker>
       </div>
  
@@ -353,7 +354,7 @@ const Home: React.FC = () => {
         <input
           type="submit"
           value="Submit"
-          className="mt-8 px-4 py-2 text-lg font-mono font-bold text-red-500 bg-gray-800 rounded hover:bg-gray-700"
+          className="mt-8 px-4 py-2 text-lg font-mono font-bold text-gray-200 bg-gray-700 rounded hover:bg-gray-700"
         />
       </form>
     </div>

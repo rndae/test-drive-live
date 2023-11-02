@@ -1,12 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import "tailwindcss/tailwind.css";
-import Image from "next/image";
 
-const Home: React.FC = () => {
+const Info: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-95% from-gray-900 to-pink-900">
-      <Image src="/logo/_TD_LOGO_FOR_WEB.png" alt="Logo" width={200} height={200} />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
       <div className="flex flex-wrap justify-around w-full max-w-4xl">
         <span className="text-gray-200 p-4 border-2 border-gray-700 rounded-lg m-4">
           <h1 className="text-gray-100 font-bold hover:text-fuchsia-200">What is TestDriveLive?{" "}</h1>
@@ -47,36 +45,38 @@ const Home: React.FC = () => {
           brand be just another name in the crowd—let us elevate you to where you
           truly belong.
         </span>
-      </div>
-
-        <div className="non-flex items-center mt-8">
-            <span className="text-gray-300 mr-4">To submit your product for review to be part of Test Drive Live, click here to go to the submission page</span>
-        </div>
-        <Link href="/request-code">
-            <button className="px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-800 rounded hover:bg-gray-700">
-            Submit
-            </button>
-        </Link>
-        <br></br>
-        <span className="text-gray-200">If you have a client code, type it here:</span>
-        <div className="flex items-center mt-8">
-            <input
-                type="text"
-                placeholder="Code"
-                className="bg-gray-700 text-white rounded p-2 mr-4"
-            />
-            <Link href="/contract">
-                <button className="px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-800 rounded hover:bg-gray-700">
-                Enter
+        <div className="grid grid-cols-2 gap-20 m-8">
+            <div>
+                <div className="items-center">
+                    <span className="text-gray-300 mr-4">To submit your product for review to be part of Test Drive Live, click here to go to the submission page</span>
+                </div>
+                <Link href="/request-code">
+                <button className="px-4 py-2 mt-4 text-lg font-mono font-bold text-pink-700 bg-gray-800 rounded hover:bg-gray-700">
+                    Submit
                 </button>
-            </Link>
-        </div>
-
-        
-
+                </Link>
+            </div>
+            <div>
+                <span className="text-gray-200">If you have a client code, type it here:</span>
+                <div className="flex items-center">
+                    <input
+                        type="text"
+                        placeholder="Code"
+                        className="bg-gray-700 text-white rounded p-2 mr-4"
+                    />
+                    <Link href="/contract">
+                        <button className="px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-800 rounded hover:bg-gray-700">
+                        Enter
+                        </button>
+                    </Link>
+                </div>
+            </div>
+            </div>
+      </div>
+   
     </div>
     
   );
 };
 
-export default Home;
+export default Info;
