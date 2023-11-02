@@ -109,9 +109,9 @@ const Home: React.FC = () => {
     console.log(data);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
       <span className="text-gray-300 font-bold">
-        Only people with a code can see this page
+        Only users with a code can see this page
       </span>
       <div className="w-full max-w-4xl mt-8 p-4 bg-gray-800 rounded shadow-lg">
 

@@ -3,7 +3,7 @@ import "tailwindcss/tailwind.css";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-70% from-gray-900 to-pink-600">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
       <video
         className="w-full max-w-4xl rounded-lg shadow-lg"
         src="/video/tdl-preview.mp4"
