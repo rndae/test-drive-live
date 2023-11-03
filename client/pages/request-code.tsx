@@ -1,11 +1,15 @@
 import React from "react";
 import { useForm, SubmitHandler, Resolver } from "react-hook-form";
+import { useRouter } from 'next/router';
+
 
 type ContactFormProps = {
   primaryName: string;
   primaryEmail: string;
   primaryPhone: string;
   yourProduct: string;
+  companyName: string;
+  accessKey: 'b90236f8-daa6-4f64-88c6-d1f765b28f4b'; 
 };
 
 const resolver: Resolver<ContactFormProps> = async (values) => {
@@ -33,17 +37,34 @@ const resolver: Resolver<ContactFormProps> = async (values) => {
 };
 
 export default function ContactForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ContactFormProps>({ resolver });
-  const onSubmit: SubmitHandler<ContactFormProps> = (data) =>
-    console.log(data);
+  const onSubmit: SubmitHandler<ContactFormProps> = async (data) => {
+    const response = await fetch('https://api.staticforms.xyz/submit', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    const json = await response.json();
+
+    if (response.ok) {
+      // Navigate to a new page
+      router.push('/success');
+    } else {
+      console.error('Error submitting form');
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
       <form
+        action='https://api.staticforms.xyz/submit'
+        method='post'
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-4xl rounded-lg shadow-lg bg-gray-800 p-8"
       >
@@ -51,6 +72,10 @@ export default function ContactForm() {
           <div className="w-1/2 p-4">
             <h1 className="text-gray-400 hover:text-gray-600">Submit your product</h1>
             <h3 className="text-lg font-bold text-white"><br></br> Your contact information</h3>
+            <input type="hidden"
+              value="b90236f8-daa6-4f64-88c6-d1f765b28f4b"
+              {...register("accessKey")}    
+            />
             <label htmlFor="primaryName" className="text-gray-300">
               Name
             </label>
@@ -97,29 +122,35 @@ export default function ContactForm() {
             <input
               id="yourProduct"
               
-              type="tel"
+              type="text"
               {...register("yourProduct")}
               className="bg-gray-700 text-white rounded p-2 w-full"
             />
 
-            <label htmlFor="yourProduct" className="text-gray-300">
+            <label htmlFor="companyName" className="text-gray-300">
               Company name
             </label>
             <input
-              id="yourProduct"
+              id="companyName"
               
-              type="tel"
-              {...register("yourProduct")}
+              type="text"
+              {...register("companyName")}
               className="bg-gray-700 text-white rounded p-2 w-full"
             />
+
+
+            <div className='field is-grouped'>
+              <div className='control'>
+                <button className='button is-primary mt-8 px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-700 rounded hover:bg-gray-700' type='submit'>
+                  Submit
+                </button>
+              </div>
+            </div>
+
           </div>
           
         </div>
-        <input
-          type="submit"
-          value="Submit"
-          className="mt-8 px-4 py-2 text-lg font-mono font-bold text-pink-700 bg-gray-700 rounded hover:bg-gray-700"
-        />
+        
       </form>
     </div>
   );

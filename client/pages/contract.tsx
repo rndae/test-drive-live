@@ -351,11 +351,13 @@ const Home: React.FC = () => {
             I have read and agree to the terms and conditions of this contract
             </label>
         </div>
-        <input
-          type="submit"
-          value="Submit"
-          className="mt-8 px-4 py-2 text-lg font-mono font-bold text-gray-200 bg-gray-700 rounded hover:bg-gray-700"
-        />
+        <div className='field is-grouped'>
+              <div className='control'>
+                <button className='button is-primary mt-8 px-4 py-2 text-lg font-mono font-bold text-gray-200 bg-gray-700 rounded hover:bg-gray-700' type='submit'>
+                  Submit
+                </button>
+              </div>
+            </div>
       </form>
     </div>
   );
