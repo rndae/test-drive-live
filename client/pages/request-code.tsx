@@ -44,7 +44,7 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormProps>({ resolver });
   const onSubmit: SubmitHandler<ContactFormProps> = async (data) => {
-    const response = await fetch('https://api.staticforms.xyz/submit', {
+    const response = await fetch('http://localhost:8080/api/submit', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'Content-Type': 'application/json' }
@@ -53,7 +53,6 @@ export default function ContactForm() {
     //const json = await response.json();
 
     if (response.ok) {
-      // Navigate to a new page
       router.push('/success');
     } else {
       console.error('Error submitting form');
@@ -63,8 +62,6 @@ export default function ContactForm() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
       <form
-        action='https://api.staticforms.xyz/submit'
-        method='POST'
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-4xl rounded-lg shadow-lg bg-gray-800 p-8"
       >
