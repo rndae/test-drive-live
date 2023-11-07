@@ -50,7 +50,7 @@ export default function ContactForm() {
       headers: { 'Content-Type': 'application/json' }
     });
 
-    const json = await response.json();
+    //const json = await response.json();
 
     if (response.ok) {
       // Navigate to a new page
@@ -64,7 +64,7 @@ export default function ContactForm() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
       <form
         action='https://api.staticforms.xyz/submit'
-        method='post'
+        method='POST'
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-4xl rounded-lg shadow-lg bg-gray-800 p-8"
       >
