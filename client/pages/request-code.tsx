@@ -2,6 +2,7 @@ import React from "react";
 import { useForm, SubmitHandler, Resolver } from "react-hook-form";
 import { useRouter } from 'next/router';
 
+const apiServer = process.env.API_SERVER;
 
 type ContactFormProps = {
   primaryName: string;
@@ -44,7 +45,8 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormProps>({ resolver });
   const onSubmit: SubmitHandler<ContactFormProps> = async (data) => {
-    const response = await fetch('http://localhost:8080/api/submit', {
+    console.log(`${apiServer}/api/submit`);
+    const response = await fetch(`${apiServer}/api/submit`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'Content-Type': 'application/json' }
