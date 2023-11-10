@@ -11,11 +11,18 @@ function sendEmail(data, callback) {
 
   });
 
+  
+  let table = '<table style="border: 1px solid black; border-collapse: collapse;">';
+  for (let key in data) {
+    table += `<tr><td style="border: 1px solid black; padding: 10px;">${key}</td><td style="border: 1px solid black; padding: 10px;">${data[key]}</td></tr>`;
+  }
+  table += '</table>';
+
   let mailOptions = {
     from: process.env.SMTP_EMAIL_ADDRESS, 
     to: process.env.SMTP_EMAIL_ADDRESS,
     subject: 'Testing Internal Form Submission',
-    text: `Form data: ${JSON.stringify(data)}`
+    html: `<p>Form data:</p>${table}`
   };
 
   transporter.sendMail(mailOptions, callback);

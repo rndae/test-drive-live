@@ -31,7 +31,7 @@ const WaitingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl font-bold text-white">Step 4: Waiting for payment complete</h1>
       <p className="text-lg text-gray-300">
         Your wire payment details are as follows:

@@ -6,7 +6,22 @@ import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = React.useState(false); 
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  
+  // close menu on route change
+  React.useEffect(() => {
+    const handleRouteChange = () => {
+      setIsOpen(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // clean up event listener
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
 
   return (
     <nav className="flex items-center justify-between w-full h-32 px-4 pt-4 text-gray-200 bg-transparent z-10 shadow-lg"> 

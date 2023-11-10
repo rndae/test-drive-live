@@ -47,7 +47,7 @@ const UploadPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl font-bold text-white">Step 3: Upload Files and Questionnaire</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
