@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
           <div className={`absolute right-0 mt-2 origin-top-right rounded-md shadow-lg ${isOpen ? "" : "hidden"}`}> 
-            <ul className="font-medium flex flex-col p-4 bg-white rounded-lg dark:bg-gray-800 dark:border-gray-700 max-w-screen-xl">
+            <ul className="font-medium flex flex-col p-4 rounded-lg bg-gray-800 border-gray-700 max-w-screen-xl">
               <li className="mx-4 my-2 md:my-0"> 
                 <Link href="/info">
                   <div className={`hover:text-fuchsia-500 hover:underline ${router.pathname === '/info' ? 'text-fuchsia-500' : 'text-gray-200'}`}>
