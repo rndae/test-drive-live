@@ -6,9 +6,11 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { useForm, SubmitHandler, Resolver } from "react-hook-form";
+import { useRouter } from 'next/router';
 
 import { pdfjs } from 'react-pdf';
 
+const apiServer = process.env.API_SERVER;
 
 type ContactFormProps = {
     signature: string;
@@ -98,18 +100,35 @@ const resolver: Resolver<ContactFormProps> = async (values) => {
     };
   };
 
-const Home: React.FC = () => {
+const Contract: React.FC = () => {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ContactFormProps>({ resolver });
-  const onSubmit: SubmitHandler<ContactFormProps> = (data) =>
-    console.log(data);
+  /*const onSubmit: SubmitHandler<ContactFormProps> = (data) =>
+    console.log(data);*/
+
+  const onSubmit: SubmitHandler<ContactFormProps> = async (data) => {
+    console.log(`${apiServer}/api/submit`);
+    const response = await fetch(`${apiServer}/api/submit`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    //const json = await response.json();
+
+    if (response.ok) {
+      router.push('/success');
+    } else {
+      console.error('Error submitting form');
+    }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-40% from-gray-900 to-pink-900">
+    <div>
       <span className="text-gray-300 font-bold">
         Only users with a code can see this page
       </span>
@@ -353,6 +372,11 @@ const Home: React.FC = () => {
         </div>
         <div className='field is-grouped'>
               <div className='control'>
+                <Link href="/info">
+                  <button className="mr-4 px-4 py-2 text-lg font-mono font-bold text-gray-200 bg-gray-700 rounded hover:bg-gray-700">
+                    Back
+                  </button>
+                </Link>
                 <button className='button is-primary mt-8 px-4 py-2 text-lg font-mono font-bold text-gray-200 bg-gray-700 rounded hover:bg-gray-700' type='submit'>
                   Submit
                 </button>
@@ -363,4 +387,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Contract;

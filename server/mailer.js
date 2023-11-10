@@ -2,13 +2,7 @@ const nodemailer = require('nodemailer');
 
 function sendEmail(data, callback) {
   let transporter = nodemailer.createTransport({
-    /*host: process.env.SMTP_HOST, //SMTP host
-    port: process.env.SMTP_PORT, //SMTP port
-    secure: process.env.SMTP_SECURE, //SMTP secure boolean. true for 465, false for other ports
-    auth: {
-      user: process.env.SMTP_LOGIN, //SMTP server login
-      pass: process.env.SMTP_KEY //SMTP server key
-    }*/
+    
     service: "Outlook365",
     auth: {
        user: process.env.SMTP_LOGIN,

@@ -9,7 +9,7 @@ require('dotenv').config();
 app.use(cors());
 
 app.get("/api/home", (req, res) => {
-  res.json({ message: "hmmm!", letters: ["A", "B", "C"] });
+  res.json({ message: "This is the 'home' API endpoint, there is nothing else to see here..."});
 });
 
 app.listen(PORT, () => {
@@ -19,9 +19,9 @@ app.listen(PORT, () => {
 
 app.use(bodyParser.json());
 
-app.post('/api/submit', (req, res) => {
+app.post('/api/email', (req, res) => {
     console.log(req.body);
-    console.log("hmmm:" + process.env.SMTP_HOST);
+    console.log("Email with SMTP host: " + process.env.SMTP_HOST);
     sendEmail(req.body, (error, info) => {
       if (error) {
         console.log(error);
